@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aadd2fdab3df4d64a8600381155bf44f, type: 3}
+  m_Name: EnemyStatus
+  m_EditorClassIdentifier: 
+  maxHealth: 50
+  currentHealth: 50
+  attackPower: 10
+  defensePower: 3
+  critChance: 0.1
+  critMultiplier: 1.5
+  evasionRate: 0.05
+  detectionRange: 5
+  attackRange: 1.5
+  attackDelay: 3
+  moveSpeed: 1
+  wanderRadius: 1
+  wanderMoveMin: 1
+  wanderMoveMax: 1
+  wanderIdleMin: 1
+  wanderIdleMax: 3
