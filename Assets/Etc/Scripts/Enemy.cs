@@ -6,6 +6,7 @@ using JetBrains.Annotations;
 public class Enemy : MonoBehaviour
 {
     public TestAI testAI;  // TestAI 스크립트 참조
+    public TestAI TestAI { get => testAI; set => testAI = value; }
 
     [Header("적 속성 데이터 (ObjectData)")]
     public ObjectData enemyData;        // 적의 이름, 설명, 속성 정보

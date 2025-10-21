@@ -25,7 +25,10 @@ public class TestAI : MonoBehaviour
     {
         openAIApi = new OpenAIApi();
         SetRole();
-        AddSpot();
+        AddSpot(targetTransforms[0]);
+        AddSpot(targetTransforms[1]);
+        AddSpot(targetTransforms[2]);
+        AddSpot(targetTransforms[3]);
 
         inputField.onEndEdit.RemoveAllListeners();
         inputField.onEndEdit.AddListener(OnInputEnd);
@@ -107,20 +110,18 @@ JSON 이외의 문장은 절대 포함하지 마세요.
         chatMessages.Add(systemMessage);
     }
 
-    public void AddSpot()
+    public void AddSpot(Transform t)
     {
-        foreach(Transform t in targetTransforms)
-        {
-            Debug.Log($"AddSpot: {t.name} at {t.position}");
-            string spotNameInfo = $"지역 이름: {t.name}";
-            string spotPosInfo = t.name + " 좌표: ( X: " + t.position.x + ", Y: " + t.position.y + " )";
+        Debug.Log($"AddSpot: {t.name} at {t.position}");
+        string spotNameInfo = $"지역 이름: {t.name}";
+        string spotPosInfo = t.name + " 좌표: ( X: " + t.position.x + ", Y: " + t.position.y + " )";
 
-            chatMessages.Add(new ChatMessage
-            {
-                Role = "system",
-                Content = spotNameInfo + "\n" + spotPosInfo
-            });
-        }
+        chatMessages.Add(new ChatMessage
+        {
+            Role = "system",
+            Content = spotNameInfo + "\n" + spotPosInfo
+        });
+
     }
 
     public void DeleteSpot(string spotName)

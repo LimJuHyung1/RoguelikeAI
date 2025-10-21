@@ -19,10 +19,10 @@ MonoBehaviour:
   critChance: 0.1
   critMultiplier: 1.5
   evasionRate: 0.05
-  detectionRange: 5
+  detectionRange: 10
   attackRange: 1.5
   attackDelay: 3
-  moveSpeed: 1
+  moveSpeed: 0.25
   wanderRadius: 1
   wanderMoveMin: 1
   wanderMoveMax: 1

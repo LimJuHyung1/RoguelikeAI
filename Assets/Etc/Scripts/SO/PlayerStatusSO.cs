@@ -54,7 +54,6 @@ public class PlayerStatusSO : ScriptableObject
     public event Action OnNightSurvived;       // 밤 생존 시 호출
 
 
-
     // -----------------------------
     // 외부 접근용 프로퍼티 (읽기 전용)
     // -----------------------------
@@ -217,6 +216,9 @@ public class PlayerStatusSO : ScriptableObject
 
         currentTurn++;
         OnStatusChanged?.Invoke();
+
+        // GameEventManager에 턴 이벤트 전달
+        GameEventManager.instance?.RaiseTurnPassed();
 
         if (currentTurn >= maxTurns)
         {
